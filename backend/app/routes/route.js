@@ -5,7 +5,6 @@ const config = require('../config/config');
 
 const router = express.Router();
 
-// Endpoint to fetch the latest 20 entries for a given symbol
 router.get('/:symbol', async (req, res) => {
     try {
         const prices = await Price.find({ symbol: req.params.symbol })
@@ -17,7 +16,7 @@ router.get('/:symbol', async (req, res) => {
     }
 });
 
-// Polling function to get data from API and save to MongoDB
+
 const fetchData = async () => {
     try {
         const response = await axios.get(config.API_URL);
@@ -33,6 +32,6 @@ const fetchData = async () => {
     }
 };
 
-// setInterval(fetchData, 10000); // Poll every 5 seconds
+setInterval(fetchData, 10000); // Poll every 10 seconds
 
 module.exports = router;
