@@ -24,7 +24,7 @@ const fetchData = async () => {
             symbol,
             price: data.usd,
         }));
-        console.log(prices)
+        // console.log(prices)
 
         await Price.insertMany(prices.map(price => new Price(price)));
     } catch (error) {
