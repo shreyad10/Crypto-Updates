@@ -12,7 +12,9 @@ const SymbolSelector = () => {
 
     return (
         <div className={styles.selectorContainer}>
-            <label htmlFor="symbol" className={styles.label}>Select Symbol:</label>
+            <label htmlFor="symbol" className={styles.label}>
+                Select Symbol: <span role="img" aria-label="chart">📈</span>
+            </label>
             <select
                 id="symbol"
                 value={currentSymbol}

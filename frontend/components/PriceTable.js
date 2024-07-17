@@ -21,16 +21,16 @@ const PriceTable = () => {
             <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th>Serial No.</th>
-                        <th>Symbol</th>
-                        <th>Price</th>
-                        <th>Timestamp</th>
+                        <th>Serial No. <span role="img" aria-label="number">🔢</span></th>
+                        <th>Symbol <span role="img" aria-label="symbol">🔣</span></th>
+                        <th>Price <span role="img" aria-label="money">💰</span></th>
+                        <th>Timestamp <span role="img" aria-label="clock">🕒</span></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {prices.map((price) => (
+                    {prices.map((price, index) => (
                         <tr key={price.timestamp}>
-                            <td></td>
+                            <td>{index + 1}</td>
                             <td>{price.symbol}</td>
                             <td>{price.price}</td>
                             <td>{new Date(price.timestamp).toLocaleString()}</td>
