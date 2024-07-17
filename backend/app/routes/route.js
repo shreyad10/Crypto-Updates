@@ -18,16 +18,17 @@ router.get("/:symbol", async (req, res) => {
 
 const fetchData = async () => {
   try {
+    console.log(config.API_URL)
     const response = await axios.get(config.API_URL);
     const prices = Object.entries(response.data).map(([symbol, data]) => ({
       symbol,
       price: data.usd,
     }));
-    // console.log(prices)
+    console.log(prices)
 
     await Price.insertMany(prices.map((price) => new Price(price)));
   } catch (error) {
-    console.error("Error fetching data:", error.response.data);
+    console.error("Error fetching data:", error.response);
   }
 };
 
