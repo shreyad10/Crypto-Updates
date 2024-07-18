@@ -81,7 +81,7 @@
 ## Project Features
 
 - **Backend**:
-  - Polls real-time data every few seconds for selected stocks or cryptocurrencies from an API (e.g., LiveCoinWatch, CoinGecko).
+  - Polls real-time data every 30 seconds for selected stocks or cryptocurrencies from an API (e.g., LiveCoinWatch, CoinGecko).
   - Stores the data in a MongoDB database.
 
 - **Frontend**:

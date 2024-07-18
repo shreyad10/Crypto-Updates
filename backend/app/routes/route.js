@@ -39,6 +39,6 @@ const fetchData = async () => {
   }
 };
 
-setInterval(fetchData, 30000); // Poll every 10 seconds
+setInterval(fetchData, 30000); // Poll every 30 seconds
 
 module.exports = router;
