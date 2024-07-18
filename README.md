@@ -26,6 +26,8 @@
     ```env
     MONGODB_URI=your_mongodb_connection_string
     PORT=3001
+    API_URL = https://api.coingecko.com/api/v3/simple/price
+    COINGECKO_API_KEY = either_get_own_API_KEY or copy_credentials_from_demo_env
     ```
 
 4. **Start the backend server:**
