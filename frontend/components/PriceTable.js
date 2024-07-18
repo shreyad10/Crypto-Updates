@@ -23,7 +23,7 @@ const PriceTable = () => {
                     <tr>
                         <th>Serial No. <span role="img" aria-label="number">🔢</span></th>
                         <th>Symbol <span role="img" aria-label="symbol">🔣</span></th>
-                        <th>Price <span role="img" aria-label="money">💰</span></th>
+                        <th>Price (in $) <span role="img" aria-label="money">💰</span></th>
                         <th>Timestamp <span role="img" aria-label="clock">🕒</span></th>
                     </tr>
                 </thead>

@@ -23,7 +23,9 @@ const SymbolSelector = () => {
             >
                 <option value="bitcoin">Bitcoin</option>
                 <option value="ethereum">Ethereum</option>
-                {/* Add more options as needed */}
+                <option value="cardano">Cardano</option>
+                <option value="solana">Solana</option>
+                <option value="tether">Tether</option>
             </select>
         </div>
     );

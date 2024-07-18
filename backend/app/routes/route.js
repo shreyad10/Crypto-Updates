@@ -18,20 +18,27 @@ router.get("/:symbol", async (req, res) => {
 
 const fetchData = async () => {
   try {
-    console.log(config.API_URL)
-    const response = await axios.get(config.API_URL);
+    console.log(config.API_URL);
+    // const response = await axios.get(config.API_URL);
+    const response = await axios({
+      method: "get",
+      url: config.API_URL,
+      headers: {
+        x_cg_demo_api_key: process.env.COINGECKO_API_KEY,
+      },
+    });
     const prices = Object.entries(response.data).map(([symbol, data]) => ({
       symbol,
       price: data.usd,
     }));
-    console.log(prices)
+    console.log(prices);
 
     await Price.insertMany(prices.map((price) => new Price(price)));
   } catch (error) {
-    console.error("Error fetching data:", error.response);
+    console.error("Error fetching data:", error.response.data);
   }
 };
 
-setInterval(fetchData, 10000); // Poll every 10 seconds
+setInterval(fetchData, 30000); // Poll every 10 seconds
 
 module.exports = router;
