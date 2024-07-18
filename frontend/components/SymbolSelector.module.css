@@ -1,5 +1,29 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes focusGlow {
+    from {
+        box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 128, 0, 0.5);
+    }
+}
+
 .selectorContainer {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .label {
@@ -8,6 +32,7 @@
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .select {
@@ -17,9 +42,10 @@
     font-size: 16px;
     background-color: #f9f9f9;
     transition: border-color 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .select:focus {
     border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+    animation: focusGlow 1s infinite alternate ease-in-out;
 }
